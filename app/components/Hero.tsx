@@ -11,9 +11,8 @@ export async function Hero() {
 
   return (
     <section className="relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-linear-to-b from-zinc-50 to-white" />
-      <Blob className="absolute -left-32 top-12 -z-10 h-72 w-72 blur-3xl sm:-left-24 sm:h-80 sm:w-80" />
-      <div className="mx-auto max-w-7xl px-6 pb-24 pt-32 sm:pt-40 lg:px-8">
+      <Blob className="absolute -left-40 top-10 z-10 h-80 w-80 sm:-left-32 sm:top-6 sm:h-96 sm:w-96" />
+      <div className="mx-auto flex min-h-[70vh] max-w-7xl items-center px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-4 inline-flex items-center rounded-full bg-zinc-100 px-3 py-1 text-sm font-medium text-zinc-700">
             {badge}
