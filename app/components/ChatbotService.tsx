@@ -8,7 +8,7 @@ export async function ChatbotService() {
     getTranslations(detectLocale(headersList.get("accept-language"))).chatbot;
 
   return (
-    <section className="border-t border-zinc-100 bg-zinc-50 py-20 sm:py-24">
+    <section className="border-t border-zinc-100 bg-secondary py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>

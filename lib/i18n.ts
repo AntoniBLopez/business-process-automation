@@ -20,6 +20,12 @@ type Step = {
   description: string;
 };
 
+export type VideoShowcaseFlowStep = {
+  title: string;
+  caption: string;
+  icon: "intake" | "workflow" | "automation" | "time";
+};
+
 export type Translations = {
   hero: {
     badge: string;
@@ -42,6 +48,13 @@ export type Translations = {
     cta: string;
     stepsHeading: string;
     steps: Step[];
+  };
+  videoShowcase: {
+    heading: string;
+    description: string;
+    promptLabel: string;
+    prompt: string;
+    flow: VideoShowcaseFlowStep[];
   };
   testimonials: {
     heading: string;
@@ -142,6 +155,36 @@ export const translations: Record<Locale, Translations> = {
         },
       ],
     },
+    videoShowcase: {
+      heading: "Where AI is headed next",
+      description:
+        "Take a quick look at the pace of AI progress. We don’t build these videos—we use them to spark ideas about the automation modern teams can unlock.",
+      promptLabel: "Prompt shown in the demo",
+      prompt:
+        "Add a workflow in the bg to showcase an AI automation for businesses. Be creative.",
+      flow: [
+        {
+          title: "Form & sheet intake",
+          caption: "Consolidate submissions from forms, email, and spreadsheets.",
+          icon: "intake",
+        },
+        {
+          title: "Workflow orchestration",
+          caption: "Pipe clean data into the automations your team relies on.",
+          icon: "workflow",
+        },
+        {
+          title: "Always-on automation",
+          caption: "Tasks run instantly and consistently across your stack.",
+          icon: "automation",
+        },
+        {
+          title: "Time back",
+          caption: "Your team focuses on strategy while bots handle the busywork.",
+          icon: "time",
+        },
+      ],
+    },
     testimonials: {
       heading: "What clients say",
       description:
@@ -167,7 +210,7 @@ export const translations: Record<Locale, Translations> = {
     calendly: {
       heading: "Book a discovery call",
       description:
-        "Pick a time that works for you. We’ll review your goals and propose next steps.",
+        "Pick a time that works for you. I’ll review your goals and propose next steps.",
       trouble: {
         prefix: "Having trouble with the embed?",
         linkLabel: "Open Calendly",
@@ -257,6 +300,36 @@ export const translations: Record<Locale, Translations> = {
           title: "3. Lanzamiento",
           description:
             "Desplegamos y monitorizamos el rendimiento, optimizando las respuestas con datos reales.",
+        },
+      ],
+    },
+    videoShowcase: {
+      heading: "Hacia dónde se dirige la IA",
+      description:
+        "Échale un vistazo al ritmo al que avanza la IA. No construimos estos videos; los usamos para inspirar ideas sobre la automatización que los equipos modernos pueden activar.",
+      promptLabel: "Prompt mostrado en la demo",
+      prompt:
+        "Add a workflow in the bg to showcase an AI automation for businesses. Be creative.",
+      flow: [
+        {
+          title: "Captura desde formularios y hojas",
+          caption: "Reúne envíos de formularios, email y hojas de cálculo en un solo lugar.",
+          icon: "intake",
+        },
+        {
+          title: "Orquestación del workflow",
+          caption: "Envía datos limpios hacia las automatizaciones que sostienen tu operación.",
+          icon: "workflow",
+        },
+        {
+          title: "Automatización continua",
+          caption: "Las tareas se ejecutan al instante y sin errores en todo tu stack.",
+          icon: "automation",
+        },
+        {
+          title: "Más tiempo libre",
+          caption: "Tu equipo se centra en la estrategia mientras los bots hacen el trabajo repetitivo.",
+          icon: "time",
         },
       ],
     },

@@ -1,18 +1,20 @@
 import { headers } from "next/headers";
+import { FiChevronDown } from "react-icons/fi";
 
-import { detectLocale, getTranslations } from "@/lib/i18n";
 import { Blob } from "@/app/widgets/Blob";
+import { FlowShowcase } from "@/app/widgets/FlowShowcase";
+import { detectLocale, getTranslations } from "@/lib/i18n";
 
 export async function Hero() {
   const headersList = await headers();
-  const { badge, title, description, primaryCta, secondaryCta } = getTranslations(
-    detectLocale(headersList.get("accept-language"))
-  ).hero;
+  const translations = getTranslations(detectLocale(headersList.get("accept-language")));
+  const { badge, title, description, primaryCta, secondaryCta } = translations.hero;
+  const { flow } = translations.videoShowcase;
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden min-h-[70vh] py-52">
       <Blob className="absolute -left-40 top-10 z-10 h-80 w-80 sm:-left-32 sm:top-6 sm:h-96 sm:w-96" />
-      <div className="mx-auto flex min-h-[70vh] max-w-7xl items-center px-6 lg:px-8">
+      <div className="mx-auto flex w-full items-center px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-4 inline-flex items-center rounded-full bg-zinc-100 px-3 py-1 text-sm font-medium text-zinc-700">
             {badge}
@@ -33,7 +35,19 @@ export async function Hero() {
               {secondaryCta}
             </a>
           </div>
+          <div className="absolute bottom-8 left-1/2 flex -translate-x-1/2">
+            <a
+              href="#video-showcase"
+              aria-label="Scroll to video showcase"
+              className="inline-flex items-center justify-center rounded-full p-3 text-zinc-400 transition hover:text-zinc-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            >
+              <FiChevronDown className="h-6 w-6 animate-bounce" />
+            </a>
+          </div>
         </div>
+      </div>
+      <div className="mx-auto mt-16 max-w-4xl px-6 lg:px-8">
+        <FlowShowcase steps={flow} />
       </div>
     </section>
   );

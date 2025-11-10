@@ -5,6 +5,7 @@ import { Footer } from "@/app/components/Footer";
 import { Header } from "@/app/components/Header";
 import { Hero } from "@/app/components/Hero";
 import { Testimonials } from "@/app/components/Testimonials";
+import { VideoShowcase } from "@/app/components/VideoShowcase";
 
 export default function Home() {
 
@@ -13,6 +14,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <VideoShowcase />
         <AutomationShowcase />
 
         <ChatbotService />

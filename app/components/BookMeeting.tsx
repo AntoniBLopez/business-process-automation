@@ -10,10 +10,10 @@ export async function BookMeeting() {
 
   const calendlyUrl =
     process.env.NEXT_PUBLIC_CALENDLY_URL ||
-    "https://calendly.com/your-calendly/intro-call?hide_landing_page_details=1&hide_gdpr_banner=1";
+    "https://calendly.com/antonilopezdev/30min/intro-call?hide_landing_page_details=1&hide_gdpr_banner=1";
 
   return (
-    <section id="book" className="border-t border-zinc-100 bg-zinc-50 py-20 sm:py-24">
+    <section id="book" className="border-t border-zinc-100 bg-secondary py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{heading}</h2>
@@ -26,7 +26,7 @@ export async function BookMeeting() {
               src={calendlyUrl}
               width="100%"
               height="720"
-              className="h-[720px] w-full"
+              className="h-[920px] w-full"
               frameBorder="0"
               loading="lazy"
             />
